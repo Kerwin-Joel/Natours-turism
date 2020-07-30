@@ -1,0 +1,72 @@
+.header{
+    height: 100vh;
+    background-image: linear-gradient(to right bottom,rgba($color-primary-ligth,0.8),rgba($color-primary-dark,0.8)),url(../img/hero.jpg);
+    background-size: cover;
+    position: relative;
+    background-position: center;
+    clip-path: polygon(0 0,100% 0,100% 70vh,0 100%);
+
+    @include respond(tab-port){
+        clip-path: polygon(0 0,100% 0,100% 85vh,0 100%);
+    }
+    
+    
+    &__logo{
+        width: 
+        7rem;
+
+        &-box{
+            position: absolute;
+            top: 4rem;
+            left: 4rem;
+        }
+
+    }
+
+    &__text-box{
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+    }
+
+}
+
+.heading-primary{
+    color: $color-white;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    margin-bottom: 6rem;
+    
+    @include respond(phone){
+        margin-bottom:3rem;
+    }
+    &--main{
+        display: block;
+        font-size: 6rem;
+        font-weight: 600;
+        letter-spacing: 3.5rem;
+    
+        animation-name: moveInLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+
+        @include respond(phone){
+            font-size: 5.5rem;
+            letter-spacing: 1.5rem;
+        }
+    }
+
+    &--sub{
+        display: block;
+        font-weight: 700;
+        font-size: 2rem;
+        letter-spacing: 1.7rem;
+        
+        animation-name: moveInRigth;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+    }
+
+}

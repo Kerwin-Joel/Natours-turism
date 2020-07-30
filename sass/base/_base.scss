@@ -1,0 +1,46 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+:root{
+
+    font-size: 62.5%;
+
+    /*  62.5% es igual a 10px por que en chrome el tamaño del texto
+        por defecto es de 16px pero cuando hacemos una regla de 3 donde 
+        16px es el 100% , 10px es el 62.5% .Entonces en el root el 
+        tamaño del texto es de 10px por lo antes explicado
+    */
+    
+    @include respond(big-desktop){
+        font-size: 75%; //1rem=12px 12/16=50%
+    }
+    @include respond(tab-land){
+        font-size: 56.25%; //1rem=9px 9/16=50%
+    }
+    @include respond(tab-port){
+        font-size: 50%; //1rem=8px 8/16=50%
+    }
+    
+}
+/*damos estilos al todo el documento*/
+body{
+    width: 100%;
+    height: 95vh;
+    padding: 3rem;
+    box-sizing: border-box;
+    position: absolute;
+    
+    @include respond(tab-port){
+        padding: 0;
+    }
+    
+}
+
+::selection{
+    background: $color-primary;
+    color:$color-white;
+}
